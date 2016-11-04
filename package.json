@@ -1,0 +1,35 @@
+{
+  "name": "willow-tree-name-game",
+  "version": "1.0.0",
+  "description": "A game to help the employees of Willow Tree learn each other's name.",
+  "main": "index.js",
+  "scripts": {
+    "production": "webpack -p",
+    "start": "webpack-dev-server"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Case104/willowTreeNameGame.git"
+  },
+  "author": "Jonathan Case",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Case104/willowTreeNameGame/issues"
+  },
+  "homepage": "https://github.com/Case104/willowTreeNameGame#readme",
+  "dependencies": {
+    "react": "^15.3.2",
+    "react-dom": "^15.3.2"
+  },
+  "devDependencies": {
+    "babel-core": "^6.18.2",
+    "babel-loader": "^6.2.7",
+    "babel-polyfill": "^6.16.0",
+    "babel-preset-es2015": "^6.18.0",
+    "babel-preset-react": "^6.16.0",
+    "babel-preset-stage-3": "^6.17.0",
+    "html-webpack-plugin": "^2.24.1",
+    "webpack": "^1.13.3",
+    "webpack-dev-server": "^1.16.2"
+  }
+}
