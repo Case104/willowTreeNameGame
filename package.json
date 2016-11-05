@@ -18,8 +18,10 @@
   },
   "homepage": "https://github.com/Case104/willowTreeNameGame#readme",
   "dependencies": {
+    "lodash": "^4.16.6",
     "react": "^15.3.2",
-    "react-dom": "^15.3.2"
+    "react-dom": "^15.3.2",
+    "react-router": "^3.0.0"
   },
   "devDependencies": {
     "babel-core": "^6.18.2",
