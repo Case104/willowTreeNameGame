@@ -1,4 +1,3 @@
-#Willow Tree Name Game
 ![Splash](http://i.imgur.com/tZs9pG1.png)
 
 ##Lets play!
@@ -14,10 +13,10 @@ Technologies Used:
  * Express
 
 ##Features:
-	MattMode!
-	Scoring
-	Routing
-	Architecture
+ * MattMode!
+ * Scoring
+ * Routing
+ * Architecture
 
 
 ##Design Thoughts
@@ -32,8 +31,7 @@ Although I didn't take the time to create tests, I did make sure to use PropType
 
 ##Take-aways
 
-######I need to spend more time with bootstrap and css. 
-	It took up a ton of my time, and I don't have much experience with it.
+######I need to spend more time with bootstrap and css. It took up a ton of my time, and I don't have much experience with it.
 ######I really enjoy the functional nature of react. The more I use it, the more it just makes sense.
 
 ##Closing
