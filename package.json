@@ -4,8 +4,9 @@
   "description": "A game to help the employees of Willow Tree learn each other's name.",
   "main": "index.js",
   "scripts": {
-    "production": "webpack -p",
-    "start": "webpack-dev-server"
+    "start": "webpack-dev-server",
+    "prod": "NODE_ENV=production node server.js",
+    "postinstall": "webpack -p"
   },
   "repository": {
     "type": "git",
