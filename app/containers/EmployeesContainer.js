@@ -1,7 +1,7 @@
 import React, { PropTypes } from 'react'
 import Employee from '../components/Employee'
 
-function EmployeesContainer({employees, matchName, onCorrect}){
+function EmployeesContainer({employees, matchName, onCorrect, onIncorrect}){
 	return(
 		<div className='col-sm-12 col-sm-offset-1'>
 			{ employees.map((employee) => {
@@ -10,6 +10,7 @@ function EmployeesContainer({employees, matchName, onCorrect}){
 									url={employee.url} 
 									matchName={matchName} 
 									onCorrect={onCorrect}
+									onIncorrect={onIncorrect}
 									key={employee.name}
 								/>
 			}) }
@@ -20,7 +21,8 @@ function EmployeesContainer({employees, matchName, onCorrect}){
 EmployeesContainer.propTypes = {
 	employees: PropTypes.array.isRequired,
 	matchName: PropTypes.string.isRequired,
-	onCorrect: PropTypes.func.isRequired
+	onCorrect: PropTypes.func.isRequired,
+	onIncorrect: PropTypes.func.isRequired
 }
 
 export default EmployeesContainer

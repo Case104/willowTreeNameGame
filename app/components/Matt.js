@@ -1,6 +1,6 @@
 import React, { PropTypes } from 'react'
 
-function MattModeBtn({createMattRound}){
+function Matt({createMattRound}){
 	return(
 		<div>
 			<button 
@@ -9,14 +9,14 @@ function MattModeBtn({createMattRound}){
 				style={{marginTop: '20px'}}
 				onClick={createMattRound}
 			>
-				Matt Mode
+				Matt Round
 			</button>
 		</div>
 	)
 }
 
-MattModeBtn.propTypes = {
+Matt.propTypes = {
 	createMattRound: PropTypes.func.isRequired
 }
 
-export default MattModeBtn
+export default Matt

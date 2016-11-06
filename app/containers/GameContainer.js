@@ -1,8 +1,9 @@
 import React, { Component } from 'react'
 import MainContainer from '../components/MainContainer'
 import Name from '../components/Name'
+import Score from '../components/Score'
 import EmployeesContainer from './EmployeesContainer'
-import MattModeBtn from '../components/Matt'
+import Matt from '../components/Matt'
 import Loading from '../components/Loading'
 import { getAllEmployees, selectNumEmployees, selectRandomEmployee, getMatts } from '../utils/helpers'
 
@@ -13,7 +14,8 @@ class GameContainer extends Component {
 			isLoading: true,
 			allEmployees: [],
 			currentEmployees: [],
-			selectedEmployee: null
+			selectedEmployee: null,
+			score: 0
 		}
 	}
 
@@ -26,7 +28,7 @@ class GameContainer extends Component {
 				isLoading: false,
 				allEmployees,
 				currentEmployees,
-				selectedEmployee
+				selectedEmployee,
 			})
 		} catch(error) { console.warn('Error in GameContainer', error) }
 	}
@@ -35,7 +37,14 @@ class GameContainer extends Component {
 		const newEmployees = selectNumEmployees(this.state.allEmployees)
 		this.setState({
 			currentEmployees: newEmployees,
-			selectedEmployee: selectRandomEmployee(newEmployees)
+			selectedEmployee: selectRandomEmployee(newEmployees),
+			score: this.state.score + 1
+		})
+	}
+
+	handleIncorrect(){
+		this.setState({
+			score: this.state.score - 1
 		})
 	}
 
@@ -55,12 +64,14 @@ class GameContainer extends Component {
 			<MainContainer>
 				<h1>Willow Tree Name Game</h1>
 				<Name name={this.state.selectedEmployee.name} />
+				<Score score={this.state.score} />
 				<EmployeesContainer 
 					employees={this.state.currentEmployees} 
 					matchName={this.state.selectedEmployee.name}
 					onCorrect={() => this.handleCorrect()}
+					onIncorrect={() => this.handleIncorrect()}
 				/>
-				<MattModeBtn createMattRound={() => this.createMattRound()}/>
+				<Matt createMattRound={() => this.createMattRound()}/>
 			</MainContainer>
 		)
 	}
