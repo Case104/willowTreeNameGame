@@ -19,6 +19,7 @@
   },
   "homepage": "https://github.com/Case104/willowTreeNameGame#readme",
   "dependencies": {
+    "express": "^4.14.0",
     "lodash": "^4.16.6",
     "react": "^15.3.2",
     "react-dom": "^15.3.2",
