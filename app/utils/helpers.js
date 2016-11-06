@@ -9,3 +9,7 @@ export async function getAllEmployees(){
 export function selectNumEmployees(employees, num = 5){
 	return _.sampleSize(employees, num)
 }
+
+export function selectRandomEmployee(employees){
+	return _.sample(employees)
+}

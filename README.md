@@ -23,3 +23,9 @@ I've decided to start off by making a spash page with a simple explanation of th
 
 Clicking enter will bring you to the game itself, which will follow the design above.
 
+At this point, I have a basic prototype. I am going to make another container for the employees to be displayed in, and a component for displaying the curent name.
+
+Next I am going to make an employees container. I will move the logic for getting the employees there, and then render it every time someone guesses correctly, with a 3-5 second interval.
+
+
+

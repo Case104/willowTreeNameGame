@@ -4,9 +4,9 @@ import { loadingStyles } from '../styles'
 class Loading extends Component{
 	constructor(props){
 		super()
-		this.origionalText = props.text
+		this.originalText = props.text
 		this.state = {
-			text: this.origionalText
+			text: this.originalText
 		}
 	}
 
