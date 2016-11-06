@@ -1,37 +1,41 @@
-My gameplan
+#Willow Tree Name Game
+![Splash](http://i.imgur.com/tZs9pG1.png)
 
-Define MVP:
-	Display 5 photos and a name. If photo is selected and matches name, repeat
+##Lets play!
 
-MVP Design:
- * Make a request to the api
- * Choose five random people and display their pictures
- * Display one name
- * onClick of picture, if name matches displayed name, add green border and after 5 seconds, display a new 5 people
+To view the app either clone it down and use `npm run start`, or visit this [Heroku Link](http://willow-tree-name-game-jc.herokuapp.com/#/).
 
-Setup:
+Technologies Used:
+ * React
+ * React-router
+ * Lodash
+ * Webpack
+ * Babel
+ * Express
 
-First I setup my dev enviornment. I use NPM to install react, react-dom, babel and its relevent presets, and webpack to tie it all together.
-
-I've decided to use react for this because I feel like the repetitive elements lead themselves to components in react, and I believe that it is the main framework that the WillowTree app team uses.
-
-As of now, I don't know if I plan to do any routing, so I have left out react-router. I do know that I will need to make a request to the api, so I have added stage 3 so that I can use async / await.
-
-MVP:
-
-I've decided to start off by making a spash page with a simple explanation of the game. 
-
-Clicking enter will bring you to the game itself, which will follow the design above.
-
-At this point, I have a basic prototype. I am going to make another container for the employees to be displayed in, and a component for displaying the curent name.
-
-Next I am going to make an employees container. I will move the logic for getting the employees there, and then render it every time someone guesses correctly, with a 3-5 second interval.
-
-Features:
-	* Display score of correct first guesses. Maybe streak
-	* Matt mode
-	* Host on Heroku
+##Features:
+	MattMode!
+	Scoring
+	Routing
+	Architecture
 
 
+##Design Thoughts
 
+My goal for this app was to demonstrate my knowledge of React and create something that I would be proud to show to the people at Wilow Tree Apps.
 
+Architecturally, I used a container / component scheme where I did my best to keep the logic in the containers, and used components as functional stateless components that would simply render a view. My coding style is to be as clear as possible (I hope), and I try to break everything down to its most basic form. 
+
+Most of the logic lives in the GameContainer. This container manages almost all of the state and logic in the app, and passes down handler methods when needed. The GamesContainer uses methods from the utils/helpers.js file to accomplish its tasks, while keeping its own methods concise and readable. I can see an argument where that level of abstraction could cause more harm than good, but I haven't heard that feedback yet.
+
+Although I didn't take the time to create tests, I did make sure to use PropTypes to provide at least a little bit of coverage. I do think that testing is good (no, really!), but I am slow at writing them and I wanted to get this out in a timely manner.
+
+##Take-aways
+
+######I need to spend more time with bootstrap and css. 
+	It took up a ton of my time, and I don't have much experience with it.
+######I really enjoy the functional nature of react. The more I use it, the more it just makes sense.
+
+##Closing
+
+I feel that creating this app did a great job of showing my strengths and weaknesses. I accomplished my initial goals, and I am excited to show it to you and hear about where I can improve!
