@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import MainContainer from '../components/MainContainer'
 import Name from '../components/Name'
-import Employee from '../components/Employee'
+import EmployeesContainer from './EmployeesContainer'
 import Loading from '../components/Loading'
 import { getAllEmployees, selectNumEmployees, selectRandomEmployee } from '../utils/helpers'
 
@@ -10,6 +10,7 @@ class GameContainer extends Component {
 		super()
 		this.state = {
 			isLoading: true,
+			allEmployees: [],
 			currentEmployees: [],
 			selectedEmployee: null
 		}
@@ -17,15 +18,24 @@ class GameContainer extends Component {
 
 	async componentDidMount(){
 		try {
-			const employees = await getAllEmployees()
-			const currentEmployees = selectNumEmployees(employees)
+			const allEmployees = await getAllEmployees()
+			const currentEmployees = selectNumEmployees(allEmployees)
 			const selectedEmployee = selectRandomEmployee(currentEmployees)
 			this.setState({
 				isLoading: false,
+				allEmployees,
 				currentEmployees,
 				selectedEmployee
 			})
 		} catch(error) { console.warn('Error in GameContainer', error) }
+	}
+
+	handleCorrect(){
+		const newEmployees = selectNumEmployees(this.state.allEmployees)
+		this.setState({
+			currentEmployees: newEmployees,
+			selectedEmployee: selectRandomEmployee(newEmployees)
+		})
 	}
 
 	render(){
@@ -36,16 +46,11 @@ class GameContainer extends Component {
 			<MainContainer>
 				<h1>Willow Tree Name Game</h1>
 				<Name name={this.state.selectedEmployee.name} />
-				<div className='col-sm-12 col-sm-offset-1'>
-					{ this.state.currentEmployees.map((employee) => {
-						return <Employee 
-											name={employee.name} 
-											url={employee.url} 
-											matchName={this.state.selectedEmployee.name} 
-											key={employee.name}
-										/>
-					}) }
-				</div>
+				<EmployeesContainer 
+					employees={this.state.currentEmployees} 
+					matchName={this.state.selectedEmployee}
+					onCorrect={() => this.handleCorrect()}
+				/>
 			</MainContainer>
 		)
 	}
