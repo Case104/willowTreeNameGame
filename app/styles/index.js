@@ -15,7 +15,7 @@ export const loadingStyles = {
 		textAlign: 'center',
 		position: 'absolute',
 		width: '100%',
-		marginTop: '30px'
+		marginTop: '150px'
 	}
 }
 
@@ -26,3 +26,4 @@ export const correctEmployee = {
 export const wrongEmployee = {
 	border: '2px solid red'
 }
+

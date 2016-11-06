@@ -45,6 +45,7 @@ class Employee extends Component{
 			<div className='col-sm-2'
 			onClick={() => this.handleSelect()}>
 				<img src={this.props.url} className='img-thumbnail' />
+				<h3 style={{color: 'white'}}>hack</h3>
 			</div>
 		)
 	}

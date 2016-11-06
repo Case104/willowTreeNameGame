@@ -27,12 +27,9 @@ At this point, I have a basic prototype. I am going to make another container fo
 
 Next I am going to make an employees container. I will move the logic for getting the employees there, and then render it every time someone guesses correctly, with a 3-5 second interval.
 
-Feature:
-	* Add proptypes - 10 
-	* Add style and animation - ?
-	* Display score of correct first guesses. Maybe streak - 90
-	* Assure that 2 women are present - 120
-	* Matt mode - 30
+Features:
+	* Display score of correct first guesses. Maybe streak
+	* Matt mode
 	* Host on Heroku
 
 

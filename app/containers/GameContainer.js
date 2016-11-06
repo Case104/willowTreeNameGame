@@ -2,8 +2,9 @@ import React, { Component } from 'react'
 import MainContainer from '../components/MainContainer'
 import Name from '../components/Name'
 import EmployeesContainer from './EmployeesContainer'
+import MattModeBtn from '../components/Matt'
 import Loading from '../components/Loading'
-import { getAllEmployees, selectNumEmployees, selectRandomEmployee } from '../utils/helpers'
+import { getAllEmployees, selectNumEmployees, selectRandomEmployee, getMatts } from '../utils/helpers'
 
 class GameContainer extends Component {
 	constructor(){
@@ -38,6 +39,14 @@ class GameContainer extends Component {
 		})
 	}
 
+	createMattRound(){
+		const matts = selectNumEmployees(getMatts(this.state.allEmployees))
+		this.setState({
+			currentEmployees: matts,
+			selectedEmployee: selectRandomEmployee(matts)
+		})
+	}
+
 	render(){
 		if (this.state.isLoading){
 			return <Loading />
@@ -51,6 +60,7 @@ class GameContainer extends Component {
 					matchName={this.state.selectedEmployee.name}
 					onCorrect={() => this.handleCorrect()}
 				/>
+				<MattModeBtn createMattRound={() => this.createMattRound()}/>
 			</MainContainer>
 		)
 	}

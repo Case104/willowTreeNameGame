@@ -13,3 +13,9 @@ export function selectNumEmployees(employees, num = 5){
 export function selectRandomEmployee(employees){
 	return _.sample(employees)
 }
+
+// MATT MODE
+
+export function getMatts(employees){
+	return employees.filter((employee) => /Matt/.test(employee.name) )
+}
