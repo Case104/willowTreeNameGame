@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { PropTypes } from 'react'
 
 function Name({name}){
 	return(
@@ -7,5 +7,7 @@ function Name({name}){
 		</div>
 	)
 }
+
+Name.propTypes = { name: PropTypes.string.isRequired }
 
 export default Name

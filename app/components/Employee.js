@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React, { Component, PropTypes } from 'react'
 import { correctEmployee, wrongEmployee }from '../styles'
 
 class Employee extends Component{
@@ -48,6 +48,13 @@ class Employee extends Component{
 			</div>
 		)
 	}
+}
+
+Employee.propTypes = {
+	matchName: PropTypes.string.isRequired,
+	name: PropTypes.string.isRequired,
+	url: PropTypes.string.isRequired,
+	onCorrect: PropTypes.func.isRequired
 }
 
 export default Employee

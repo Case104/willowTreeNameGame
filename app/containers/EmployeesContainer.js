@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { PropTypes } from 'react'
 import Employee from '../components/Employee'
 
 function EmployeesContainer({employees, matchName, onCorrect}){
@@ -8,13 +8,19 @@ function EmployeesContainer({employees, matchName, onCorrect}){
 				return <Employee 
 									name={employee.name} 
 									url={employee.url} 
-									matchName={matchName.name} 
+									matchName={matchName} 
 									onCorrect={onCorrect}
 									key={employee.name}
 								/>
 			}) }
 		</div>
 	)
+}
+
+EmployeesContainer.propTypes = {
+	employees: PropTypes.array.isRequired,
+	matchName: PropTypes.string.isRequired,
+	onCorrect: PropTypes.func.isRequired
 }
 
 export default EmployeesContainer

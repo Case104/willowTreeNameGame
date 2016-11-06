@@ -48,7 +48,7 @@ class GameContainer extends Component {
 				<Name name={this.state.selectedEmployee.name} />
 				<EmployeesContainer 
 					employees={this.state.currentEmployees} 
-					matchName={this.state.selectedEmployee}
+					matchName={this.state.selectedEmployee.name}
 					onCorrect={() => this.handleCorrect()}
 				/>
 			</MainContainer>
