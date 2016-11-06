@@ -4,7 +4,7 @@
 
 To view the app either clone it down and use `npm run start`, or visit this [Heroku Link](http://willow-tree-name-game-jc.herokuapp.com/#/).
 
-Technologies Used:
+####Technologies Used:
  * React
  * React-router
  * Lodash
@@ -12,7 +12,7 @@ Technologies Used:
  * Babel
  * Express
 
-##Features:
+####Features:
  * MattMode!
  * Scoring
  * Routing
