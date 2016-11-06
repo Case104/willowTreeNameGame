@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React, { Component, PropTypes } from 'react'
 import { loadingStyles } from '../styles'
 
 class Loading extends Component{
@@ -36,6 +36,11 @@ class Loading extends Component{
 			</div>
 		)
 	}
+}
+
+Loading.propTypes = {
+	text: PropTypes.string.isRequired,
+	speed: PropTypes.number.isRequired
 }
 
 Loading.defaultProps = {
