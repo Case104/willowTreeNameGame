@@ -1,4 +1,6 @@
-export const transparentBg = {background: 'transparent'}
+export const transparentBg = {
+	background: 'transparent'
+}
 
 export const loadingStyles = {
 	container: {
@@ -15,4 +17,12 @@ export const loadingStyles = {
 		width: '100%',
 		marginTop: '30px'
 	}
+}
+
+export const correctEmployee = {
+	border: '2px solid green'
+}
+
+export const wrongEmployee = {
+	border: '2px solid red'
 }

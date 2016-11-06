@@ -1,15 +1,17 @@
 import React, { Component } from 'react'
+import MainContainer from '../components/MainContainer'
+import Name from '../components/Name'
 import Employee from '../components/Employee'
 import Loading from '../components/Loading'
-import { getAllEmployees } from '../utils/helpers'
-import { selectNumEmployees } from '../utils/helpers'
+import { getAllEmployees, selectNumEmployees, selectRandomEmployee } from '../utils/helpers'
 
 class GameContainer extends Component {
 	constructor(){
 		super()
 		this.state = {
 			isLoading: true,
-			currentEmployees: []
+			currentEmployees: [],
+			selectedEmployee: null
 		}
 	}
 
@@ -17,9 +19,11 @@ class GameContainer extends Component {
 		try {
 			const employees = await getAllEmployees()
 			const currentEmployees = selectNumEmployees(employees)
+			const selectedEmployee = selectRandomEmployee(currentEmployees)
 			this.setState({
 				isLoading: false,
-				currentEmployees
+				currentEmployees,
+				selectedEmployee
 			})
 		} catch(error) { console.warn('Error in GameContainer', error) }
 	}
@@ -28,17 +32,23 @@ class GameContainer extends Component {
 		if (this.state.isLoading){
 			return <Loading />
 		}
-
 		return (
-			<div>
-				{this.state.currentEmployees.map(function(employee){
-					return <Employee name={employee.name} url={employee.url} key={employee.name}/>
-				})}
-			</div>
+			<MainContainer>
+				<h1>Willow Tree Name Game</h1>
+				<Name name={this.state.selectedEmployee.name} />
+				<div className='col-sm-12 col-sm-offset-1'>
+					{ this.state.currentEmployees.map((employee) => {
+						return <Employee 
+											name={employee.name} 
+											url={employee.url} 
+											matchName={this.state.selectedEmployee.name} 
+											key={employee.name}
+										/>
+					}) }
+				</div>
+			</MainContainer>
 		)
-
 	}
-
 }
 
 export default GameContainer
