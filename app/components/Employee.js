@@ -8,6 +8,7 @@ class Employee extends Component{
 		this.name = props.name
 		this.url = props.url
 		this.onCorrect = props.onCorrect
+		this.onIncorrect = props.onIncorrect
 		this.state = {
 			selected: false
 		}
@@ -19,6 +20,8 @@ class Employee extends Component{
 		})
 		if (this.props.name === this.props.matchName){
 			setTimeout(() => this.props.onCorrect(), 2000);
+		} else {
+			this.props.onIncorrect()
 		}
 	}
 
@@ -55,7 +58,8 @@ Employee.propTypes = {
 	matchName: PropTypes.string.isRequired,
 	name: PropTypes.string.isRequired,
 	url: PropTypes.string.isRequired,
-	onCorrect: PropTypes.func.isRequired
+	onCorrect: PropTypes.func.isRequired,
+	onIncorrect: PropTypes.func.isRequired
 }
 
 export default Employee

@@ -17,5 +17,5 @@ export function selectRandomEmployee(employees){
 // MATT MODE
 
 export function getMatts(employees){
-	return employees.filter((employee) => /Matt/.test(employee.name) )
+	return employees.filter((employee) => /^Matt/.test(employee.name) )
 }
