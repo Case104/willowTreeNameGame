@@ -29,11 +29,6 @@ Most of the logic lives in the GameContainer. This container manages almost all 
 
 Although I didn't take the time to create tests, I did make sure to use PropTypes to provide at least a little bit of coverage.
 
-##Take-aways
-
-######I need to spend more time with bootstrap and css. It was a huge timesink.
-######I really enjoy the functional nature of react. The more I use it, the more it just makes sense.
-
 ##Closing
 
 I feel like I accomplished my initial goals, and that this app does a good job of displaying my overall coding style.
